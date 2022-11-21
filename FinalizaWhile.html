@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaliza While oprimiendo 0</title>
+</head>
+
+<body>
+    <center>
+        <button onclick="iniciar()">INICIAR</button><br /><br />
+        <button onclick="detener()">DETENER</button>
+        <div id="salida">
+
+        </div>
+    </center>
+    <script>
+        var salida = document.getElementById("salida");
+        salida.innerHTML= "";
+        var detener;
+        var idciclo;
+        var intento;
+
+        function iniciar(){
+            detener = false;
+            ciclo(detener);
+
+        }
+
+        
+        function detener(){
+            detener = true;
+            ciclo(detener);
+            
+        }
+
+        function ciclo(detener) {
+            while (detener == false) {
+                var texto = document.createElement("p");
+                texto.textContent = "intento: " + intento;
+                salida.appendChild(texto);
+                console.log("intento: " + intento);
+                intento += 1;
+
+            }
+        }
+
+        function iniciar(detener) {
+            idciclo = setTimeout(ciclo(detener), 2);
+        }
+    </script>
+</body>
+
+</html>

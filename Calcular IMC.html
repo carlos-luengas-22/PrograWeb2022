@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CALCULAR IMC</title>
+    </head>
+
+    <body>
+        <h1>Calculadora de Indice de Masa Corporal</h1>
+        <p>Ingrese nombre: <input type="text" id="nombr"></p>
+        <p>Ingrese edad (años): <input type="text" id="eda"></p>
+        <p>Ingrese peso (kg): <input type="text" id="kg"></p>
+        <p>Ingrese Altura (m): <input type="text" id="m"></p>
+        <button id="calc">Calcular IMC</button>
+        <p>Nombre: <span id="nombre"></span></p>
+        <p>Edad: <span id="edad"></span></p>
+        <p>IMC: <span id="imc"></span></p>
+        <p>Lectura: <span id="lectura"></span></p>
+        <script type="text/javascript">
+            calc = document.getElementById("calc");
+            kg = document.getElementById("kg");
+            m = document.getElementById("m");
+            imc = document.getElementById("imc");
+            nombr = document.getElementById("nombr");
+            nombre = document.getElementById("nombre");
+            eda = document.getElementById("eda");
+            edad = document.getElementById("edad");
+            lectura = document.getElementById("lectura");
+
+            calc.onclick = function(){
+                if(kg.value!="" && m.value!=""){
+                    imcx = (kg.value / (m.value * m.value));
+                    nombre.innerHTML = nombr.value;
+                    edad.innerHTML = eda.value;
+                    imc.innerHTML = imcx;
+                    console.log(imcx);
+
+                    if(imcx<22){ lectura.innerHTML = "Peso bajo, coma más"; }
+                    else if(imcx>=22 && imcx<=24.99){lectura.innerHTML = "Peso correcto, ¡felicitaciones!";}
+                    else if(imcx>=25){lectura.innerHTML = "Peso alto, haga Dieta y Ejercicio";}
+
+                    
+                }else{
+                    alert("Debes ingresar un peso y una altura para calcular el IMC")
+                }
+            };
+        </script>
+    </body>
+</html>

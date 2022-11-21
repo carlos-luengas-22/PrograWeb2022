@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Semanal</title>
+</head>
+
+<body>
+    <h1>Calcula tu pago base por hora y horas trabajadas</h1>
+    <p>Ingresa tu sueldo por hora <input type="number" id="suelhora"></p>
+    <p>Ingrese el numero total de horas trabajadas <input type="number" id="horas"></p>
+    <button id="calc">Calcula pago total</button>
+    <p>Pago Total: <span id="pagotota"></span></p>
+    <p>Sueldo Total: <span id="sueldototal"></span></p>
+    <script type="text/javascript">
+        calc = document.getElementById("calc");
+        sueldohora = document.getElementById("suelhora");
+        horas = document.getElementById("horas");
+        Pagototal = document.getElementById("pagotota");
+        sueldototal = document.getElementById("sueldototal");
+
+        calc.onclick = function () {
+            if (suelhora.value != "" && horas.value != "") {
+                pago = "";
+                sueldohora = sueldohora.value;
+                valorhora = 0;
+                horas = horas.value;
+                console.log(horas)
+                if (horas > 0) {
+                    if(horas > 40){
+                        pago = horas + " - ( 40 horas de pago normal";
+                        valorhora = 40 * sueldohora;
+                    }
+                    else{
+                        pago = horas + " - ( " + horas + " horas de pago normal)";
+                        valorhora = sueldohora * horas;
+                        }
+                    horas -= 40
+                }
+                if (horas > 0) {
+                    if(horas > 7){
+                        pago = pago + ", 7 horas de pago doble";
+                        valorhora += 7 * (sueldohora * 2); 
+                    }
+                    else{
+                        pago = pago + " y " + horas + " horas de pago doble)";
+                        valorhora += horas * (sueldohora * 2);
+                        }
+                    horas -= 7
+                }
+                if (horas > 0) {
+                    pago = pago + " y " + horas + " horas de pago triple)";
+                    valorhora += horas * (sueldohora * 3);
+                }
+                Pagototal.innerHTML = pago;
+                sueldototal.innerHTML = valorhora;
+
+            } else {
+                alert("Debes ingresar tu sueldo por hora y el numero de horas trabajadas.")
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+
+    <script type="text/javascript">
+        function suma(){
+            var Numero1 = Number(document.getElementById('Numero1').value);
+            var Numero2 = Number(document.getElementById('Numero2').value);
+
+            var resultado = Numero1 + Numero2
+
+            document.getElementById('resultado').value = resultado
+        }
+
+        function resta(){
+            var Numero1 = Number(document.getElementById('Numero1').value);
+            var Numero2 = Number(document.getElementById('Numero2').value);
+
+            var resultado = Numero1 - Numero2
+
+            document.getElementById('resultado').value = resultado
+        }
+
+        function multiplicar(){
+            var Numero1 = Number(document.getElementById('Numero1').value);
+            var Numero2 = Number(document.getElementById('Numero2').value);
+
+            var resultado = Numero1 * Numero2
+
+            document.getElementById('resultado').value = resultado
+        }
+
+        function dividir(){
+            var Numero1 = Number(document.getElementById('Numero1').value);
+            var Numero2 = Number(document.getElementById('Numero2').value);
+
+            var resultado = Numero1 / Numero2
+
+            document.getElementById('resultado').value = resultado
+        }
+
+        function NuevaOperación(){
+            location.reload();
+        }
+
+        
+    </script>
+</head>
+<body>
+    <p>Ingresa el primer Numero <input type="text" id="Numero1"></p><br/>
+    <p>Ingresa el segundo Numero <input type="text" id="Numero2"></p><br/>
+    Resultado <input type="text" id="resultado"><br/><br/>
+
+    <input type="button" value="Sumar" onclick="suma()">
+    <input type="button" value="Restar" onclick="resta()">
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+    <input type="button" value="Dividir" onclick="dividir()"><br/><br/>
+    <input type="button" value="NuevaOperacion" id="reset" onclick="NuevaOperación()">
+</body>
+</html>

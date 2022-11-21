@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Vendedor</title>
+</head>
+
+<body>
+    <h1>Calcula tu sueldo base mas tu comision de ventas</h1>
+    <p>Ingresa tu sueldo base <input type="text" id="suelbas"></p>
+    <p>Ingrese el numero total de ventas que tuviste en el mes <input type="text" id="venta"></p>
+    <button id="calc">Calcula pago total</button>
+    <p>Pago Total: <span id="pagotota"></span></p>
+    <p>Tu comision sera <span id="lectura"></span></p>
+    <script type="text/javascript">
+        calc = document.getElementById("calc");
+        suelbas = document.getElementById("suelbas");
+        ventastotales = document.getElementById("venta");
+        Pagototal = document.getElementById("pagotota");
+        lectura = document.getElementById("lectura");
+        venta = 200;
+
+        calc.onclick = function () {
+            if (suelbas.value != "" && venta.value != "") {
+                nventas = (ventastotales.value * venta)
+
+                if (nventas < 2000) {
+                    sueldo = parseInt(suelbas.value)
+                    console.log(sueldo.type);
+                    sueldo += sueldo * 0.1;
+                    lectura.innerHTML = "de un 10% de comision debido a que tus ventas del mes son menores a $2,000.";
+                    Pagototal.innerHTML = sueldo;
+                    
+                }
+                else if (nventas >= 2000) {
+                    sueldo = parseInt(suelbas.value)
+                    console.log(sueldo.type);
+                    sueldo += sueldo * 0.2;
+                    lectura.innerHTML = "de un 20% de comision debido a que tus ventas del mes son mayores a $2,000.";
+                    Pagototal.innerHTML = sueldo;
+                }
+
+
+            } else {
+                alert("Debes ingresar tu sueldo base y numero total de ventas en el ultimo mes.")
+            }
+        };
+    </script>
+</body>
+
+</html>

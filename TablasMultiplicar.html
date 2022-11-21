@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas de Multiplicar</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function escribirTablaMultiplicar(j) {
+
+        document.write("<h2>Tabla de multiplicar del numero " + j + "</h2>");
+
+        document.write("<ul>");
+        //i++ significa i=i+1;
+
+        for (i = 1; i <= 10; i++) {
+            document.write("<li>");
+            document.write(j + "x " + i + "= " + j * i);
+            document.write("</li>");
+        }
+
+        document.write("</ul>");
+    }
+
+    var Tablainicio = parseInt(window.prompt("¿Desde que tabla de multiplicar desea visualizar?"));
+    var Tablafin = parseInt(window.prompt("¿Hasta que tabla de multiplicar desea visualizar?"));
+    if (Tablainicio > Tablafin) {
+        alert("La tabla de inicio debe ser menor que la tabla final");
+    } else {
+        for (k = Tablainicio; k <= Tablafin; k++) {
+            document.write("<div>");
+            escribirTablaMultiplicar(k);
+            document.write("</div>");
+        }
+    }
+</script>

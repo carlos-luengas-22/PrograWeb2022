@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio de calificaciones</title>
+</head>
+
+<body>
+    <h2>Promedio de las calificaciones de este semestre</h2>
+    <p>Progra web 2: <input type="text" id="n1"></p>
+    <p>Micropros Teoria: <input type="text" id="n2"></p>
+    <p>Micros Labo: <input type="text" id="n3"></p>
+    <p>Sistemas de info: <input type="text" id="n4"></p>
+    <p>Redes de Comp: <input type="text" id="n5"></p>
+    <p>Redes de Comp Labo: <input type="text" id="n6"></p>
+    <p><input type="button" value="Calcular" onclick="CalcularPromedio()"></p>
+    <p>Promedio = <span id="promedio"></span></p>
+    <p>Resultado: <span id="resultado"></span></p>
+</body>
+<script>
+    function CalcularPromedio() {
+        var v1 = document.getElementById("n1").value;
+        var v2 = document.getElementById("n2").value;
+        var v3 = document.getElementById("n3").value;
+        var v4 = document.getElementById("n4").value;
+        var v5 = document.getElementById("n5").value;
+        var v6 = document.getElementById("n6").value;
+        var prom = (parseFloat(v1) + parseFloat(v2) + parseFloat(v3) + parseFloat(v4) + parseFloat(v5) + parseFloat(
+            v6)) / 6;
+        document.getElementById("promedio").innerHTML = prom;
+        resultado = document.getElementById("resultado");
+        if (prom < 6.00) {
+            resultado.innerHTML = "REPROBADO";
+        } else if (prom >= 6) {
+            resultado.innerHTML = "APROBADO";
+        }
+    }
+</script>
+
+</html>

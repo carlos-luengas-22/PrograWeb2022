@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSOR DE UNIDADES</title>
+</head>
+
+<body>
+    <center>
+        <div class="contenedor">
+            <h2>Conversor de unidades de distancia</h2>
+            <div class="fila">
+                <span>Convertir de </span>
+                <select name="unidad1" id="unidad1">
+                    <option value="Kilometro">Kilometro</option>
+                    <option value="Metro">Metro</option>
+                    <option value="Centimetro">Centimetro</option>
+                    <option value="Milimetro">Milimetro</option>
+                    <option value="Yarda">Yarda</option>
+                    <option value="Pie">Pie</option>
+                </select><br /><br />
+                <span> a </span>
+                <select name="unidad2" id="unidad2">
+                    <option value="Kilometro">Kilometro</option>
+                    <option value="Metro">Metro</option>
+                    <option value="Centimetro">Centimetro</option>
+                    <option value="Milimetro">Milimetro</option>
+                    <option value="Yarda">Yarda</option>
+                    <option value="Pie">Pie</option>
+                </select>
+            </div><br />
+
+
+            CANTIDAD <input type="number" id="valor" placeholder=" ingresa una cantidad"><br /><br />
+            <input type="button" value="Convertir" onclick="convertir()">
+            <br /><br />
+            RESULTADO <span id="resultado"></span>
+
+
+            <div class="resultado" id="resultado"></div>
+        </div>
+    </center>
+    <script type="text/javascript">
+        valor = document.getElementById("valor");
+        txtResultado = document.getElementById("resultado");
+        unidad1 = document.getElementById("unidad1");
+        unidad2 = document.getElementById("unidad2");
+
+        function convertir() {
+            //alert()
+            if (valor.value != '') {
+                numero = parseFloat(valor.value);
+                if (unidad1.value == "Kilometro" && unidad2.value == "Kilometro") {
+                    resultado = numero * 1;
+                    txtResultado.innerHTML = numero + " Kilometro/s equivalen a " + resultado + "Kilometro/s";
+                }
+                if (unidad1.value == "Kilometro" && unidad2.value == "Milimetro") {
+                    resultado = numero * 1000000;
+                    txtResultado.innerHTML = numero + " Kilometro/s equivalen a " + resultado + "Milimetro/s";
+                }
+                if (unidad1.value == "Kilometro" && unidad2.value == "Centimetro") {
+                    resultado = numero * 100000;
+                    txtResultado.innerHTML = numero + " Kilometro/s equivalen a " + resultado + "Centimetro/s";
+                }
+                if (unidad1.value == "Kilometro" && unidad2.value == "Metro") {
+                    resultado = numero * 1000;
+                    txtResultado.innerHTML = numero + " Kilometro/s equivalen a " + resultado + "Metro/s";
+                }
+                if (unidad1.value == "Kilometro" && unidad2.value == "Yarda") {
+                    resultado = numero * 1094;
+                    txtResultado.innerHTML = numero + " Kilometro/s equivalen a " + resultado + "Yarda/s";
+                }
+                if (unidad1.value == "Kilometro" && unidad2.value == "Pie") {
+                    resultado = numero * 3281;
+                    txtResultado.innerHTML = numero + " Kilometro/s equivalen a " + resultado + "Pie/s";
+                }
+
+
+
+                if (unidad1.value == "Metro" && unidad2.value == "Metro") {
+                    resultado = numero * 1;
+                    txtResultado.innerHTML = numero + " Metro/s equivalen a " + resultado + "Metro/s";
+                }
+                if (unidad1.value == "Metro" && unidad2.value == "Milimetro") {
+                    resultado = numero * 1000;
+                    txtResultado.innerHTML = numero + " Metro/s equivalen a " + resultado + "Milimetro/s";
+                }
+                if (unidad1.value == "Metro" && unidad2.value == "Centimetro") {
+                    resultado = numero * 100;
+                    txtResultado.innerHTML = numero + " Metro/s equivalen a " + resultado + "Centimetro/s";
+                }
+                if (unidad1.value == "Metro" && unidad2.value == "Kilometro") {
+                    console.log(numero);
+                    resultado = numero / 1000;
+                    txtResultado.innerHTML = numero + " Metro/s equivalen a " + resultado + "Kilometro/s";
+                }
+                if (unidad1.value == "Metro" && unidad2.value == "Yarda") {
+                    resultado = numero * 1.094;
+                    txtResultado.innerHTML = numero + " Metro/s equivalen a " + resultado + "Yarda/s";
+                }
+                if (unidad1.value == "Metro" && unidad2.value == "Pie") {
+                    resultado = numero * 3.281;
+                    txtResultado.innerHTML = numero + " Metro/s equivalen a " + resultado + "Pie/s";
+                }
+
+
+
+                if (unidad1.value == "Centimetro" && unidad2.value == "Centimetro") {
+                    resultado = numero * 1;
+                    txtResultado.innerHTML = numero + " Centimetro/s equivalen a " + resultado + "Centimetro/s";
+                }
+                if (unidad1.value == "Centimetro" && unidad2.value == "Milimetro") {
+                    resultado = numero * 10;
+                    txtResultado.innerHTML = numero + " Centimetro/s equivalen a " + resultado + "Milimetro/s";
+                }
+                if (unidad1.value == "Centimetro" && unidad2.value == "Metro") {
+                    resultado = numero / 100;
+                    txtResultado.innerHTML = numero + " Centimetro/s equivalen a " + resultado + "Metro/s";
+                }
+                if (unidad1.value == "Centimetro" && unidad2.value == "Kilometro") {
+                    resultado = numero / 100000;
+                    txtResultado.innerHTML = numero + " Centimetro/s equivalen a " + resultado + "Kilometro/s";
+                }
+                if (unidad1.value == "Centimetro" && unidad2.value == "Yarda") {
+                    resultado = numero / 91.44;
+                    txtResultado.innerHTML = numero + " Centimetro/s equivalen a " + resultado + "Yarda/s";
+                }
+                if (unidad1.value == "Centimetro" && unidad2.value == "Pie") {
+                    resultado = numero / 30.48;
+                    txtResultado.innerHTML = numero + " Centimetro/s equivalen a " + resultado + "Pie/s";
+                }
+
+
+
+                if (unidad1.value == "Milimetro" && unidad2.value == "Milimetro") {
+                    resultado = numero * 1;
+                    txtResultado.innerHTML = numero + " Milimetro/s equivalen a " + resultado + "Milimetro/s";
+                }
+                if (unidad1.value == "Milimetro" && unidad2.value == "Centimetro") {
+                    resultado = numero / 10;
+                    txtResultado.innerHTML = numero + " Milimetro/s equivalen a " + resultado + "Centimetro/s";
+                }
+                if (unidad1.value == "Milimetro" && unidad2.value == "Metro") {
+                    resultado = numero / 1000;
+                    txtResultado.innerHTML = numero + " Milimetro/s equivalen a " + resultado + "Metro/s";
+                }
+                if (unidad1.value == "Milimetro" && unidad2.value == "Kilometro") {
+                    resultado = numero / 1000000;
+                    txtResultado.innerHTML = numero + " Milimetro/s equivalen a " + resultado + "Kilometro/s";
+                }
+                if (unidad1.value == "Milimetro" && unidad2.value == "Yarda") {
+                    resultado = numero / 914.4;
+                    txtResultado.innerHTML = numero + " Milimetro/s equivalen a " + resultado + "Yarda/s";
+                }
+                if (unidad1.value == "Milimetro" && unidad2.value == "Pie") {
+                    resultado = numero / 304.8;
+                    txtResultado.innerHTML = numero + " Milimetro/s equivalen a " + resultado + "Pie/s";
+                }
+
+
+
+                if (unidad1.value == "Yarda" && unidad2.value == "Yarda") {
+                    resultado = numero * 1;
+                    txtResultado.innerHTML = numero + "Yarda/s equivalen a " + resultado + "Yarda/s";
+                }
+                if (unidad1.value == "Yarda" && unidad2.value == "Centimetro") {
+                    resultado = numero * 91.44;
+                    txtResultado.innerHTML = numero + " Yarda/s equivalen a " + resultado + "Centimetro/s";
+                }
+                if (unidad1.value == "Yarda" && unidad2.value == "Metro") {
+                    resultado = numero / 1.094;
+                    txtResultado.innerHTML = numero + " Yarda/s equivalen a " + resultado + "Metro/s";
+                }
+                if (unidad1.value == "Yarda" && unidad2.value == "Kilometro") {
+                    resultado = numero / 1094;
+                    txtResultado.innerHTML = numero + " Yarda/s equivalen a " + resultado + "Kilometro/s";
+                }
+                if (unidad1.value == "Yarda" && unidad2.value == "Milimetro") {
+                    resultado = numero * 914.4;
+                    txtResultado.innerHTML = numero + " Yarda/s equivalen a " + resultado + "Milimetro/s";
+                }
+                if (unidad1.value == "Yarda" && unidad2.value == "Pie") {
+                    resultado = numero * 3;
+                    txtResultado.innerHTML = numero + " Yarda/s equivalen a " + resultado + "Pie/s";
+                }
+
+
+
+                if (unidad1.value == "Pie" && unidad2.value == "Pie") {
+                    resultado = numero * 1;
+                    txtResultado.innerHTML = numero + "Pie/s equivalen a " + resultado + "Pie/s";
+                }
+                if (unidad1.value == "Pie" && unidad2.value == "Centimetro") {
+                    resultado = numero * 30.48;
+                    txtResultado.innerHTML = numero + " Pie/s equivalen a " + resultado + "Centimetro/s";
+                }
+                if (unidad1.value == "Pie" && unidad2.value == "Metro") {
+                    resultado = numero / 3.281;
+                    txtResultado.innerHTML = numero + " Pie/s equivalen a " + resultado + "Metro/s";
+                }
+                if (unidad1.value == "Pie" && unidad2.value == "Kilometro") {
+                    resultado = numero / 3281;
+                    txtResultado.innerHTML = numero + " Pie/s equivalen a " + resultado + "Kilometro/s";
+                }
+                if (unidad1.value == "Pie" && unidad2.value == "Milimetro") {
+                    resultado = numero * 304.8;
+                    txtResultado.innerHTML = numero + " Pie/s equivalen a " + resultado + "Milimetro/s";
+                }
+                if (unidad1.value == "Pie" && unidad2.value == "Yarda") {
+                    resultado = numero / 3;
+                    txtResultado.innerHTML = numero + " Pie/s equivalen a " + resultado + "Yarda/s";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
